@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SuperHero</string>
+    <string name="app_name">Marvel Unlimited</string>
     <string name="super_heroes">MARVEL UNLIMITED</string>
     <string name="error_image_msg">ocurrio un error al obtener la imagen</string>
     <string name="title_activity_main2">MainActivity2</string>
@@ -18,4 +18,5 @@
     <string name="series">SERIES</string>
     <string name="stories">STORIES</string>
     <string name="no_image_available">There\'s no image available</string>
+    <string name="no_description_available">There\'s no description available</string>
 </resources>

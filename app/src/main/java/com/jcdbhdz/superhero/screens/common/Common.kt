@@ -18,6 +18,9 @@ import com.jcdbhdz.superhero.R
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
+fun Spacer(size: Int = 8) = Spacer(modifier = Modifier.size(size.dp))
+
+@Composable
 fun ImageLoading(imageModel: String = "", height: Int = 230) {
     GlideImage(
         modifier = Modifier

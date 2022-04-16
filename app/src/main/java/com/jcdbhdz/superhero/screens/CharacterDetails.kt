@@ -24,6 +24,7 @@ import com.jcdbhdz.superhero.data.model.Character
 import com.jcdbhdz.superhero.data.model.Comic
 import com.jcdbhdz.superhero.navigation.AppScreens
 import com.jcdbhdz.superhero.screens.common.ImageLoading
+import com.jcdbhdz.superhero.screens.common.Spacer
 import com.jcdbhdz.superhero.ui.theme.SuperHeroTheme
 import com.jcdbhdz.superhero.viewmodel.SuperHeroViewModel
 
@@ -82,18 +83,25 @@ fun DetailPage(
 fun DisplayInformation(characterList: List<Character>, navController: NavHostController){
     if(characterList.isNotEmpty()){
         Column(
-            modifier = Modifier.verticalScroll(rememberScrollState())
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
             ) {
             ImageLoading("${characterList.first().thumbnail?.path}.${characterList.first().thumbnail?.extension}")
             CharacterDescription(description = characterList.first().description)
+            Spacer(modifier = Modifier.weight(1f))
             AditionalInformation(characterId = characterList.first().id, navController = navController)
+            Spacer()
         }
     }
 }
 
 @Composable
 fun CharacterDescription(description: String?) {
-    Text(text = if(description.isNullOrBlank()) stringResource(id = R.string.no_information_available) else description, style = MaterialTheme.typography.body1, modifier = Modifier.padding(8.dp))
+    Text(
+        text = if(description.isNullOrBlank()) stringResource(id = R.string.no_description_available) else description,
+        style = MaterialTheme.typography.body1,
+        modifier = Modifier.padding(8.dp))
 }
 
 //@Preview(showBackground = true)

@@ -132,9 +132,6 @@ fun LoadedCard(character: Character, navController: NavHostController) {
 }
 
 @Composable
-fun Spacer(size: Int = 8) = Spacer(modifier = Modifier.size(size.dp))
-
-@Composable
 fun SuperHeroList(
     isLoading: Boolean,
     characterList: List<Character>,
