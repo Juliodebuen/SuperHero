@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">SuperHero</string>
+    <string name="app_name">Marvel Unlimited</string>
+    <string name="super_heroes">MARVEL UNLIMITED</string>
+    <string name="error_image_msg">ocurrio un error al obtener la imagen</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_character_details">CharacterDetailsActivity</string>
+    <string name="no_information_available">There\'s no information available</string>
+    <string name="comics">COMICS</string>
+    <string name="events">EVENTS</string>
+    <string name="series">SERIES</string>
+    <string name="stories">STORIES</string>
+    <string name="no_image_available">There\'s no image available</string>
+    <string name="no_description_available">There\'s no description available</string>
 </resources>
