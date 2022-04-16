@@ -5,5 +5,5 @@ data class CharacterDataContainer(
     val limit:Int?,
     val total:Int?,
     val count:Int?,
-    val results:ArrayList<Character>?,
+    val results:List<Character>?,
 )

@@ -8,6 +8,7 @@ data class Character(
     val name :String?,
     val description :String?,
     val modified :Date?,
+    val thumbnail :Image?,
     val resourceURI :String?,
     val urls :ArrayList<Url>?,
     val comics:ComicList?,
