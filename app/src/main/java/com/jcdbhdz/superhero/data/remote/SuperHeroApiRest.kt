@@ -1,7 +1,6 @@
 package com.jcdbhdz.superhero.data.remote
 
 import com.jcdbhdz.superhero.data.model.*
-import kotlinx.coroutines.flow.MutableStateFlow
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

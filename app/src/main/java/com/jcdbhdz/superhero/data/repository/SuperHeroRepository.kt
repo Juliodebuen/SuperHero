@@ -4,11 +4,8 @@ import com.jcdbhdz.superhero.data.model.*
 import com.jcdbhdz.superhero.data.remote.SuperHeroApiRest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import okhttp3.Dispatcher
-import java.sql.Timestamp
 import javax.inject.Inject
 import javax.inject.Named
 

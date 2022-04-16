@@ -2,6 +2,7 @@ package com.jcdbhdz.superhero.screens.common
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -36,19 +37,12 @@ fun ImageLoading(imageModel: String = "", height: Int = 230) {
         failure = {
             NoData(stringResource = R.string.no_image_available, color = Color.White)
         }
-        /*shimmerParams = ShimmerParams(
-            baseColor = MaterialTheme.colors.background,
-            highlightColor = Color.Gray,
-            durationMillis = 1000,
-            dropOff = 0.65f,
-            tilt = 20f
-        )*/
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun NoData(stringResource: Int = R.string.no_information_available, color: Color = Color.Black){
+fun NoData(stringResource: Int = R.string.no_information_available, color: Color = MaterialTheme.colors.secondary){
     Column(
         modifier = Modifier
             .fillMaxWidth()

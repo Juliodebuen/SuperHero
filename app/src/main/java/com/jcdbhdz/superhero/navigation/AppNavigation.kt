@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.jcdbhdz.superhero.screens.AnimatedSplash
 import com.jcdbhdz.superhero.screens.DetailPage
 import com.jcdbhdz.superhero.screens.CharacterListScreen
 import com.jcdbhdz.superhero.screens.MoreInformation
@@ -13,7 +14,10 @@ import com.jcdbhdz.superhero.screens.MoreInformation
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = AppScreens.CharacterListScreen.route){
+    NavHost(navController = navController, startDestination = AppScreens.SplashScreen.route){
+        composable(route = AppScreens.SplashScreen.route){
+            AnimatedSplash(navController = navController)
+        }
         composable(route = AppScreens.CharacterListScreen.route){
             CharacterListScreen(navController = navController)
         }

@@ -5,16 +5,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
@@ -29,8 +25,6 @@ import com.jcdbhdz.superhero.navigation.AppScreens
 import com.jcdbhdz.superhero.screens.common.ImageLoading
 import com.jcdbhdz.superhero.ui.theme.SuperHeroTheme
 import com.jcdbhdz.superhero.viewmodel.SuperHeroViewModel
-import com.skydoves.landscapist.ShimmerParams
-import com.skydoves.landscapist.glide.GlideImage
 import com.valentinilk.shimmer.shimmer
 
 @Composable
@@ -147,7 +141,7 @@ fun SuperHeroList(
     viewModel: SuperHeroViewModel,
     navController: NavHostController
 ) {
-    val listState = rememberForeverLazyListState(key = "Overview")
+    val listState = rememberLazyListState()
     LazyColumn(state = listState) {
         if (isLoading && characterList.isEmpty()) {
             repeat(10) {
@@ -173,13 +167,9 @@ fun SuperHeroList(
 
 @Composable
 fun LazyListState.OnBottomReached(
-    // tells how many items before we reach the bottom of the list
-    // to call onLoadMore function
     buffer : Int = 0,
     onLoadMore : () -> Unit
 ) {
-    // Buffer must be positive.
-    // Or our list will never reach the bottom.
     require(buffer >= 0) { "buffer cannot be negative, but was $buffer" }
 
     val shouldLoadMore = remember {
@@ -188,7 +178,6 @@ fun LazyListState.OnBottomReached(
                 ?:
                 return@derivedStateOf true
 
-            // subtract buffer from the total items
             lastVisibleItem.index >=  layoutInfo.totalItemsCount - 1 - buffer
         }
     }

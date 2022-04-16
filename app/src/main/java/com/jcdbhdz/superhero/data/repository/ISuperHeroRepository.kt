@@ -2,7 +2,6 @@ package com.jcdbhdz.superhero.data.repository
 
 import com.jcdbhdz.superhero.data.model.*
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Named
 
 interface ISuperHeroRepository {
     suspend fun getCharacters(limit: Int, offset: Int) : Flow<CharacterDataWrapper>
